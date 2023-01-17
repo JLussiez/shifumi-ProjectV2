@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fight</title>
     <link rel="stylesheet" href="assets/css/style2.css" />
+    <script src="/assets/js/script.js"></script>
   </head>
   <body>
     <section class="fight1">
@@ -17,12 +18,29 @@
     </section>
     <section class="bas">
       <div class="container-bas">
-        <button>
+        <button id="pierre" onclick="checker('rock')">
           <img width="80%" src="./assets/img/poing_1-removebg-preview.png" />
         </button>
-        <button><img src="./assets/img/feuille2.png" /></button>
-        <button><img width="100%" src="./assets/img/pieds 1.png" /></button>
+        <button id="feuille" onclick="checker('paper')""><img src="./assets/img/feuille2.png" /></button>
+        <button id="ciseaux" onclick="checker('scissor')"><img width="100%" src="./assets/img/pieds 1.png" /></button>
       </div>
+      <div class="container">
+        <div class="scores">
+            <p>Computer : 
+                <span id="computer_score">0</span>
+            </p>
+            <p>
+                You :
+                <span id="user_score">0</span>
+            </p>
+        </div>
+        <div class="details">
+            <p id="user_choice"></p>
+            <p id="comp_choice"></p>
+            <p id="result"></p>
+        </div>
+    </div>
+
       <div class="container-bas2">
         <img width="auto" src="./assets/img/perso1.png" />
         <img width="auto" src="./assets/img/perso2.png" />

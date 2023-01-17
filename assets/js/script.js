@@ -5,23 +5,56 @@ button.addEventListener('click', function(){ if (confirm("Are you sure you want 
 const buttons = document.querySelectorAll("button");
 const resultat = document.querySelector(".resultat");
 
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function () {
-        const joueur = buttons[i].innerHTML;
-        const robot = buttons[Math.floor(Math.random() * buttons.length)].innerHTML;
-        let resultat = "";
-        // resultat.innerHTML = joueur + "       " + robot;
-        if (joueur === robot) {
-            resultat = "Egalité";
-        } else if ((joueur === "Pierre" && robot === "Ciseaux") || (joueur === "Ciseaux" && robot === "Feuilles") || (joueur === "Feuilles") && (robot === "Pierre")) {
-            resultat = "Gagné";
-        } else {
-            resultat = "Perdu";
-        }
-        document.querySelector(".resultat").innerHTML = `
-  Joueur : ${joueur} </br>
-  Robot : ${robot} <br/>
-  Résultat : ${resultat}
-`;
-    });
+let [computer_score,user_score]=[0,0];
+let result_ref = document.getElementById("result");
+let choices_object = {
+    'rock' : {
+        'rock' : 'draw',
+        'scissor' : 'win',
+        'paper' : 'lose'
+    },
+    'scissor' : {
+        'rock' : 'lose',
+        'scissor' : 'draw',
+        'paper' : 'win'
+    },
+    'paper' : {
+        'rock' : 'win',
+        'scissor' : 'lose',
+        'paper' : 'draw'
+    }
+
+}
+
+function checker(input){
+    var choices = ["rock", "paper", "scissor"];
+    var num = Math.floor(Math.random()*3);
+
+    document.getElementById("comp_choice").innerHTML = 
+    ` Computer choose <span> ${choices[num].toUpperCase()} </span>`;
+
+    document.getElementById("user_choice").innerHTML = 
+    ` You choose <span> ${input.toUpperCase()} </span>`;
+
+    let computer_choice = choices[num];
+
+    switch(choices_object[input][computer_choice]){
+        case 'win':
+            result_ref.style.cssText = "background-color: #cefdce; color: #689f38";
+            result_ref.innerHTML = "YOU WIN";
+            user_score++;
+            break;
+        case 'lose':
+            result_ref.style.cssText = "background-color: #ffdde0; color: #d32f2f";
+            result_ref.innerHTML = "YOU LOSE";
+            computer_score++;
+            break;
+        default:
+            result_ref.style.cssText = "background-color: #e5e5e5; color: #808080";
+            result_ref.innerHTML = "DRAW";
+            break;
+    }
+
+    document.getElementById("computer_score").innerHTML = computer_score;
+    document.getElementById("user_score").innerHTML = user_score;
 }
