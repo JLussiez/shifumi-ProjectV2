@@ -62,6 +62,12 @@ button{
     color: white;
     margin-top: -15%;
 }
+.caracter1, .caracter2{
+    padding-top: -25%;
+}
+.caracter2{
+    padding-right: -30%;
+}
 
 @media only screen and (max-width: 600px) {
     .container-top1{
