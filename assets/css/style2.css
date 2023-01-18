@@ -22,6 +22,10 @@
     color: white;
     font-size: 7ch;
 }
+.container-top1 img{
+    padding-left: 7%;
+    padding-right: 7%;
+}
 .container-top2{
     display: flex;
     justify-content: center;
@@ -61,7 +65,7 @@ button{
 
 @media only screen and (max-width: 600px) {
     .container-top1{
-        font-size: 4ch;
+        font-size: 3.5ch;
     }
     .container-top2{
         margin-top: -12%;
@@ -70,7 +74,7 @@ button{
         width: 15%;
     }
     .container-bas2{
-        margin-top: -130%;
+        margin-top: -5%;
 
     }
     .container-bas2 img{
@@ -84,6 +88,6 @@ button{
         background-size: cover;
     }
     .container{
-        margin-top: -75%;
+        margin-top: -135%;
     }
 }
