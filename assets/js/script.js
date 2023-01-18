@@ -28,7 +28,10 @@ let timer = setInterval(() => {
         clearInterval(timer)
 }, 1000);
 
-restart.addEventListener('click', function(){ window.location.reload()} )
+restart.addEventListener('click', function(){ 
+    window.location.reload()
+    localStorage.removeItem("Player_score")
+} )
 let computer_score
 let user_score
 
