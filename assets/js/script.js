@@ -1,4 +1,3 @@
-// let button = document.getElementById("test")
 let image = document.getElementById("imgtimer")
 let p1 = document.getElementById('p1')
 let p2 = document.getElementById('p2')
@@ -11,12 +10,6 @@ let life1 = document.getElementById("heartlife2")
 let restart = document.querySelector(".restart_button")
 let save = document.querySelector(".save_button")
 let victory = document.getElementById("#victory_ammount")
-
-// button.addEventListener('click', function () {
-//     if (confirm("Are you sure you want to exit?")) {
-//         window.close()
-//     }
-// })
 
 count = 3
 let timer = setInterval(() => {
