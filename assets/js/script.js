@@ -6,13 +6,15 @@ let pierre = document.querySelector('pierre')
 let ciseaux = document.querySelector('ciseaux')
 let feuille = document.querySelector('feuille')
 let restart = document.querySelector(".restart_button")
-
+let save = document.querySelector(".save_button")
+let victory = document.getElementById("#victory_ammount")
 // button.addEventListener('click', function () {
 //     if (confirm("Are you sure you want to exit?")) {
 //         window.close()
 //     }
 // })
 
+console.log(victory)
 count = 3
 let timer = setInterval(() => {
     count -= 1
@@ -30,6 +32,13 @@ restart.addEventListener('click', function(){ window.location.reload()} )
 
 let [computer_score,user_score]=[0,0];
 let result_ref = document.getElementById("result");
+save.addEventListener('click',function(){
+    localStorage.setItem("Player_score", user_score);
+    localStorage.setItem("Computer_score", computer_score)
+})
+let saved_pscore = localStorage.getItem("Player_score")
+let saved_cscore = localStorage.getItem("Computer_score")
+
 let choices_object = {
     'rock' : {
         'rock' : 'draw',
@@ -89,5 +98,6 @@ function checker(input){
         p2.style.width = '30vh';
         p2.style.height = '30vh';
         p2.style.paddingTop = '20%';
+        victory.innerHTML = "1"
     }
 }
