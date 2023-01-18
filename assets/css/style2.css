@@ -12,7 +12,6 @@
     font-family: 'act_of_rejectionregular';
 }
 .fight1{
-
     background: url("../img/bg3.gif") center center no-repeat fixed;
     background-size: cover;
     height: 100vh;
@@ -44,6 +43,7 @@
 }
 .container-bas2 img{
     height: 55vh;
+    margin-top: 10%;
 }
 button{
     background-color: rgba(255, 255, 255, 0.65);
@@ -52,6 +52,11 @@ button{
 }
 .img1{
     padding-top: 15px;
+}
+.container{
+    text-align: center;
+    color: white;
+    margin-top: -15%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -78,4 +83,7 @@ button{
         background: url("../img/bg3.gif") center center no-repeat fixed;
         background-size: cover;
     }
-  }
+    .container{
+        margin-top: -75%;
+    }
+}
