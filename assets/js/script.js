@@ -5,6 +5,8 @@ let p2 = document.getElementById('p2')
 let pierre = document.querySelector('pierre')
 let ciseaux = document.querySelector('ciseaux')
 let feuille = document.querySelector('feuille')
+let life = document.getElementById("heartlife1")
+let life1 = document.getElementById("heartlife2")
 
 // button.addEventListener('click', function () {
 //     if (confirm("Are you sure you want to exit?")) {
@@ -83,8 +85,52 @@ function checker(input) {
     } else if (user_score == 10){
         image.src = "assets/img/p1win.svg"
         p2.src = "assets/img/p2loose.svg"
-        p2.style.width = '30vh';
-        p2.style.height = '30vh';
+        p2.style.width = '35vh';
+        p2.style.height = '35vh';
         p2.style.paddingTop = '20%';
+    }
+
+    if(computer_score == 1){
+        life.src = "assets/img/coeur_de_vie_9.png"
+    } else if (computer_score == 2){
+        life.src = "assets/img/coeur_de_vie_8.png"
+    }else if (computer_score == 3){
+        life.src = "assets/img/coeur_de_vie_7.png"
+    }else if (computer_score == 4){
+        life.src = "assets/img/coeur_de_vie_6.png"
+    }else if (computer_score == 5){
+        life.src = "assets/img/coeur_de_vie_5.png"
+    }else if (computer_score == 6){
+        life.src = "assets/img/coeur_de_vie_4.png"
+    }else if (computer_score == 7){
+        life.src = "assets/img/coeur_de_vie_3.png"
+    }else if (computer_score == 8){
+        life.src = "assets/img/coeur_de_vie_2.png"
+    }else if (computer_score == 9){
+        life.src = "assets/img/coeur_de_vie_1.png"
+    }else if (computer_score == 10){
+        life.src = "assets/img/coeur_de_vie_0.png"
+    }
+
+    if(user_score == 1){
+        life1.src = "assets/img/coeur_de_vie_9.png"
+    } else if (user_score == 2){
+        life1.src = "assets/img/coeur_de_vie_8.png"
+    }else if (user_score == 3){
+        life1.src = "assets/img/coeur_de_vie_7.png"
+    }else if (user_score == 4){
+        life1.src = "assets/img/coeur_de_vie_6.png"
+    }else if (user_score == 5){
+        life1.src = "assets/img/coeur_de_vie_5.png"
+    }else if (user_score == 6){
+        life1.src = "assets/img/coeur_de_vie_4.png"
+    }else if (user_score == 7){
+        life1.src = "assets/img/coeur_de_vie_3.png"
+    }else if (user_score == 8){
+        life1.src = "assets/img/coeur_de_vie_2.png"
+    }else if (user_score == 9){
+        life1.src = "assets/img/coeur_de_vie_1.png"
+    }else if (user_score == 10){
+        life1.src = "assets/img/coeur_de_vie_0.png"
     }
 }
