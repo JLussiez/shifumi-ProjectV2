@@ -44,6 +44,7 @@
     margin-top: -28%;
     padding-left: 10%;
     padding-right: 10%;
+    padding-bottom: 0;
 }
 .container-bas2 img{
     height: 55vh;
@@ -67,6 +68,15 @@ button{
 }
 .caracter2{
     padding-right: -30%;
+}
+button.save_button{
+    position: absolute;
+    height: 7vh;
+}
+button.restart_button{
+    position: absolute;
+    left: 85%;
+    height: 7vh;
 }
 
 @media only screen and (max-width: 600px) {
