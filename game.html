@@ -1,64 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fight</title>
-    <link rel="stylesheet" href="assets/css/style2.css" />
-    <script async src="assets/js/script.js"></script>
-  </head>
-  <body>
-    <section class="fight1">
-      <div class="container-top1">
-        <img
-          class="heartlife1"
-          id="heartlife1"
-          src="assets/img/coeur_de_vie_10.png"
-          width="70vw"
-          height="70vh"
-        />
-        <p>Player 1</p>
-        <img src="assets/img/3.svg" width="20%" id="imgtimer" />
-        <p>Player 2</p>
-        <img
-          class="heartlife2"
-          id="heartlife2"
-          src="assets/img/coeur_de_vie_10.png"
-          width="70vw"
-          height="70vh"
-        />
-      </div>
-      <div class="container-top2"></div>
-    </section>
-    <section>
-      <div class="container-bas">
-        <button onclick="checker('rock')">
-          <img width="80%" src="./assets/img/poing_1-removebg-preview.png" id="pierre"/>
-        </button>
-        <button onclick="checker('paper')"><img src="./assets/img/feuille2.png" id="feuille"/></button>
-        <button onclick="checker('scissor')"><img width="100%" src="./assets/img/feet_comp.png" id="ciseaux"/></button>
-      </div>
-      <div class="container" id="container">
-        <div class="scores">
-            <p>Computer : 
-                <span id="computer_score">0</span>
-            </p>
-            <p>
-                You :
-                <span id="user_score">0</span>
-            </p>
-        </div>
-        <div class="details">
-            <p id="user_choice"></p>
-            <p id="comp_choice"></p>
-            <p id="result"></p>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fight</title>
+  <link rel="stylesheet" href="assets/css/style2.css" />
+  <script async src="assets/js/script.js"></script>
+</head>
+
+<body>
+  <section class="fight1">
+    <div class="container-top1">
+      <img class="heartlife1" id="heartlife1" src="assets/img/coeur_de_vie_10.png" width="70vw" height="70vh" />
+      <p>Player 1</p>
+      <img src="assets/img/3.svg" width="20%" id="imgtimer" />
+      <p>Player 2</p>
+      <img class="heartlife2" id="heartlife2" src="assets/img/coeur_de_vie_10.png" width="70vw" height="70vh" />
     </div>
-      <div class="container-bas2">
-        <img width="auto" src="./assets/img/perso1.png" id="p1"/>
-        <img width="auto" src="./assets/img/perso2.png" id="p2"/>
+    <div class="container-top2"></div>
+  </section>
+  <section>
+    <div class="container-bas">
+      <button onclick="checker('rock')">
+        <img width="80%" src="./assets/img/poing_1-removebg-preview.png" id="pierre" />
+      </button>
+      <button onclick="checker('paper')"><img src="./assets/img/feuille2.png" id="feuille" /></button>
+      <button onclick="checker('scissor')"><img width="100%" src="./assets/img/feet_comp.png" id="ciseaux" /></button>
+    </div>
+    <div class="container" id="container">
+      <div class="scores">
+        <p>Computer :
+          <span id="computer_score">0</span>
+        </p>
+        <p>
+          You :
+          <span id="user_score">0</span>
+        </p>
       </div>
-    </section>
-  </body>
+      <div class="details">
+        <p id="user_choice"></p>
+        <p id="comp_choice"></p>
+        <p id="result"></p>
+      </div>
+    </div>
+    <div class="container-bas2">
+      <img class="caracter1" width="auto" src="./assets/img/ryu.gif" id="p1"/>
+      <img class="caracter2" width="auto" src="./assets/img/ken.gif" id="p2"/>
+    </div>
+  </section>
+</body>
+
 </html>
