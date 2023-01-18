@@ -6,9 +6,7 @@ let p2 = document.getElementById('p2')
 let pierre = document.getElementById('pierre')
 let ciseaux = document.getElementById('ciseaux')
 let feuille = document.getElementById('feuille')
-console.log('pierre')
-console.log('ciseaux')
-console.log('feuille')
+let container = document.getElementById('container')
 
 // button.addEventListener('click', function () {
 //     if (confirm("Are you sure you want to exit?")) {
@@ -87,12 +85,19 @@ function checker(input) {
         p1.src = "assets/img/ryu.png"
         p1.style.width = '70vh';
         p1.style.height = '70vh';
-        p1.style.paddingTop = '-50%';
+        p1.style.paddingTop = '-100%';
+        pierre.src = "";
+        ciseaux.src = "";
+        feuille.src ="";
+        container.src ="";
     } else if (user_score == 10){
         image.src = "assets/img/p1win.svg"
         p2.src = "assets/img/ken.png"
         p2.style.width = '70vh';
         p2.style.height = '70vh';
         p2.style.paddingTop = '10%';
+        pierre.src = "";
+        ciseaux.src = "";
+        feuille.src ="";
     }
 }
