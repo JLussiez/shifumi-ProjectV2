@@ -1,10 +1,14 @@
 // let button = document.getElementById("test")
 let image = document.getElementById("imgtimer")
+let p1 = document.getElementById('p1')
 let p2 = document.getElementById('p2')
 
-let pierre = document.querySelector('pierre')
-let ciseaux = document.querySelector('ciseaux')
-let feuille = document.querySelector('feuille')
+let pierre = document.getElementById('pierre')
+let ciseaux = document.getElementById('ciseaux')
+let feuille = document.getElementById('feuille')
+console.log('pierre')
+console.log('ciseaux')
+console.log('feuille')
 
 // button.addEventListener('click', function () {
 //     if (confirm("Are you sure you want to exit?")) {
@@ -80,11 +84,15 @@ function checker(input) {
 
     if (computer_score == 10){
         image.src = "assets/img/p2win.svg"
+        p1.src = "assets/img/ryu.png"
+        p1.style.width = '70vh';
+        p1.style.height = '70vh';
+        p1.style.paddingTop = '-50%';
     } else if (user_score == 10){
         image.src = "assets/img/p1win.svg"
-        p2.src = "assets/img/p2loose.svg"
-        p2.style.width = '30vh';
-        p2.style.height = '30vh';
-        p2.style.paddingTop = '20%';
+        p2.src = "assets/img/ken.png"
+        p2.style.width = '70vh';
+        p2.style.height = '70vh';
+        p2.style.paddingTop = '10%';
     }
 }
