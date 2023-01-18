@@ -29,16 +29,31 @@ let timer = setInterval(() => {
 }, 1000);
 
 restart.addEventListener('click', function(){ window.location.reload()} )
+let computer_score
+let user_score
 
-let [computer_score,user_score]=[0,0];
 let result_ref = document.getElementById("result");
 save.addEventListener('click',function(){
     localStorage.setItem("Player_score", user_score);
     localStorage.setItem("Computer_score", computer_score)
 })
 let saved_pscore = localStorage.getItem("Player_score")
-let saved_cscore = localStorage.getItem("Computer_score")
+let saved_cscore = localStorage.getItem("Computer_score") 
+console.log(saved_pscore)
+if(saved_pscore && saved_cscore){
+    
+computer_score= saved_cscore
+user_score = saved_pscore
+document.getElementById("computer_score").innerHTML = computer_score;
+document.getElementById("user_score").innerHTML = user_score;
+}else{
+    computer_score= 0
+    user_score = 0
+    document.getElementById("computer_score").innerHTML = computer_score;
+    document.getElementById("user_score").innerHTML = user_score;
 
+}
+console.log(computer_score)
 let choices_object = {
     'rock' : {
         'rock' : 'draw',
@@ -92,6 +107,7 @@ function checker(input){
 
     if (computer_score == 10){
         image.src = "assets/img/p2win.svg"
+        localStorage.removeItem("Player_score")
     } else if (user_score == 10){
         image.src = "assets/img/p1win.svg"
         p2.src = "assets/img/p2loose.svg"
@@ -99,5 +115,6 @@ function checker(input){
         p2.style.height = '30vh';
         p2.style.paddingTop = '20%';
         victory.innerHTML = "1"
+        localStorage.removeItem("Player_score")
     }
 }
