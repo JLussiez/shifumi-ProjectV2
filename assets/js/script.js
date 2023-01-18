@@ -8,6 +8,9 @@ let ciseaux = document.getElementById('ciseaux')
 let feuille = document.getElementById('feuille')
 let life = document.getElementById("heartlife1")
 let life1 = document.getElementById("heartlife2")
+let restart = document.querySelector(".restart_button")
+let save = document.querySelector(".save_button")
+let victory = document.getElementById("#victory_ammount")
 
 // button.addEventListener('click', function () {
 //     if (confirm("Are you sure you want to exit?")) {
@@ -28,28 +31,55 @@ let timer = setInterval(() => {
         clearInterval(timer)
 }, 1000);
 
-let [computer_score, user_score] = [0, 0];
+restart.addEventListener('click', function(){ 
+    window.location.reload()
+    localStorage.removeItem("Player_score")
+} )
+let computer_score
+let user_score
+
 let result_ref = document.getElementById("result");
+save.addEventListener('click',function(){
+    localStorage.setItem("Player_score", user_score);
+    localStorage.setItem("Computer_score", computer_score)
+})
+let saved_pscore = localStorage.getItem("Player_score")
+let saved_cscore = localStorage.getItem("Computer_score") 
+console.log(saved_pscore)
+if(saved_pscore && saved_cscore){
+    
+computer_score= saved_cscore
+user_score = saved_pscore
+document.getElementById("computer_score").innerHTML = computer_score;
+document.getElementById("user_score").innerHTML = user_score;
+}else{
+    computer_score= 0
+    user_score = 0
+    document.getElementById("computer_score").innerHTML = computer_score;
+    document.getElementById("user_score").innerHTML = user_score;
+
+}
+console.log(computer_score)
 let choices_object = {
-    'rock': {
-        'rock': 'draw',
-        'scissor': 'win',
-        'paper': 'lose'
+    'rock' : {
+        'rock' : 'draw',
+        'scissor' : 'win',
+        'paper' : 'lose'
     },
-    'scissor': {
-        'rock': 'lose',
-        'scissor': 'draw',
-        'paper': 'win'
+    'scissor' : {
+        'rock' : 'lose',
+        'scissor' : 'draw',
+        'paper' : 'win'
     },
-    'paper': {
-        'rock': 'win',
-        'scissor': 'lose',
-        'paper': 'draw'
+    'paper' : {
+        'rock' : 'win',
+        'scissor' : 'lose',
+        'paper' : 'draw'
     }
 
 }
 
-function checker(input) {
+function checker(input){
     var choices = ["rock", "paper", "scissor"];
     var num = Math.floor(Math.random() * 3);
 
@@ -90,6 +120,7 @@ function checker(input) {
         pierre.src = "";
         ciseaux.src = "";
         feuille.src ="";
+        localStorage.removeItem("Player_score")
     } else if (user_score == 10){
         image.src = "assets/img/p1win.svg"
         p2.src = "assets/img/ken.png"
@@ -99,6 +130,7 @@ function checker(input) {
         pierre.src = "";
         ciseaux.src = "";
         feuille.src ="";
+        localStorage.removeItem("Player_score")
     }
     if(computer_score == 1){
         life.src = "assets/img/coeur_de_vie_9.png"
