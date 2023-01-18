@@ -5,6 +5,7 @@ let p2 = document.getElementById('p2')
 let pierre = document.querySelector('pierre')
 let ciseaux = document.querySelector('ciseaux')
 let feuille = document.querySelector('feuille')
+let restart = document.querySelector(".restart_button")
 
 // button.addEventListener('click', function () {
 //     if (confirm("Are you sure you want to exit?")) {
@@ -24,6 +25,8 @@ let timer = setInterval(() => {
     if (count == -1)
         clearInterval(timer)
 }, 1000);
+
+restart.addEventListener('click', function(){ window.location.reload()} )
 
 let [computer_score,user_score]=[0,0];
 let result_ref = document.getElementById("result");
